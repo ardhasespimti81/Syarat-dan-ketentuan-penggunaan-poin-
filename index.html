@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syarat & Ketentuan Poin & Koin</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#e8fdf2,#ffffff);
+}
+
+.container{
+    max-width:430px;
+    margin:20px auto;
+    padding:18px;
+}
+
+.card{
+    background:#ffffff;
+    border-radius:18px;
+    padding:22px;
+    border:3px solid #4CAF50;
+    box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+
+h2{
+    text-align:center;
+    color:#2e7d32;
+    margin-bottom:14px;
+}
+
+.item{
+    margin-bottom:12px;
+    font-size:14px;
+    line-height:1.7;
+    color:#333;
+}
+
+/* SUPPORT */
+.support{
+    text-align:center;
+    margin:20px 0;
+    color:#2e7d32;
+    font-weight:700;
+}
+
+.support span{
+    display:inline-block;
+    font-size:32px;
+    animation:pray 1.6s infinite;
+}
+
+@keyframes pray{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
+}
+
+/* CHECKBOX */
+.check-area{
+    display:flex;
+    gap:10px;
+    margin-top:18px;
+    align-items:flex-start;
+    font-size:14px;
+    font-weight:600;
+    color:#2e7d32;
+}
+
+.check-area input{
+    width:18px;
+    height:18px;
+    accent-color:#4CAF50;
+    margin-top:2px;
+}
+
+/* BUTTON */
+.btn-next{
+    margin-top:20px;
+    width:100%;
+    padding:14px;
+    font-size:16px;
+    border-radius:14px;
+    border:none;
+    background:#cfcfcf;
+    color:white;
+    cursor:not-allowed;
+    transition:0.3s;
+}
+
+.btn-next.active{
+    background:linear-gradient(135deg,#4CAF50,#2e7d32);
+    cursor:pointer;
+    box-shadow:0 6px 16px rgba(0,0,0,0.25);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h2>Syarat & Ketentuan Poin & Koin Loyalitas</h2>
+
+<div class="item">🎁 <b>Poin Loyalitas</b><br>
+Poin merupakan bentuk <b>program loyalitas pengguna</b> yang diberikan oleh aplikasi. Poin tidak memiliki nilai uang dan tidak dapat dianggap sebagai alat pembayaran.</div>
+
+<div class="item">🪙 <b>Koin Internal</b><br>
+Koin adalah nilai loyalitas internal hasil konversi poin yang hanya dapat digunakan untuk memperoleh barang atau manfaat yang tersedia di dalam aplikasi.</div>
+
+<div class="item">🚫 <b>Bukan Uang Elektronik</b><br>
+Poin dan koin <b>bukan uang elektronik</b>, bukan dompet digital, bukan alat pembayaran sah, serta <b>tidak berada di bawah layanan jasa keuangan</b> sebagaimana diatur oleh Bank Indonesia maupun OJK.</div>
+
+<div class="item">💳 <b>Tidak Dapat Diuangkan</b><br>
+Poin dan koin <b>tidak dapat diuangkan, ditransfer, dipindahtangankan, maupun diperjualbelikan</b> dalam bentuk apa pun.</div>
+
+<div class="item">⚖️ <b>Nilai Konversi</b><br>
+Nilai poin dan koin dapat berubah sewaktu-waktu. Dalam proses konversi poin ke koin, nilai yang diperoleh dapat lebih tinggi atau lebih rendah sesuai kebijakan penyelenggara.</div>
+
+<div class="item">📊 <b>Standar Loyalitas Terbatas</b><br>
+Perubahan nilai konversi merupakan bagian dari <b>program loyalitas terbatas</b> yang ditetapkan oleh penyelenggara aplikasi.</div>
+
+<div class="item">🔒 <b>Keputusan Penyelenggara</b><br>
+Seluruh proses penukaran poin dan koin bersifat <b>final, sah, dan tidak dapat diganggu gugat</b>.</div>
+
+<div class="item">🚨 <b>Penyalahgunaan</b><br>
+Segala bentuk penyalahgunaan poin dan koin akan dikenakan <b>tindakan pemblokiran akun</b> dan/atau penghentian layanan.</div>
+
+<div class="item" style="font-weight:bold;color:#2e7d32;">
+Dengan melanjutkan, pengguna menyatakan telah memahami dan menyetujui seluruh ketentuan poin dan koin di atas.
+</div>
+
+<div class="support">
+<span>🙏</span><br>
+Dukung aplikasi ini agar lebih bermanfaat
+</div>
+
+<div class="check-area">
+<input type="checkbox" id="agreeCheck">
+<label for="agreeCheck">
+Saya menyetujui dan memahami bahwa poin & koin bukan uang, bukan alat pembayaran, dan hanya berlaku di dalam aplikasi
+</label>
+</div>
+
+<button id="nextBtn" class="btn-next">LANJUT</button>
+
+</div>
+</div>
+
+<script>
+const nextLink = "https://kulinerpilihan.umkmdigital.net/akun/change-point";
+
+const checkbox = document.getElementById("agreeCheck");
+const nextBtn = document.getElementById("nextBtn");
+
+checkbox.addEventListener("change", function(){
+    if(this.checked){
+        nextBtn.classList.add("active");
+        nextBtn.disabled = false;
+    }else{
+        nextBtn.classList.remove("active");
+        nextBtn.disabled = true;
+    }
+});
+
+nextBtn.addEventListener("click", function(){
+    if(this.classList.contains("active")){
+        window.location.href = nextLink;
+    }
+});
+</script>
+
+</body>
+</html>
